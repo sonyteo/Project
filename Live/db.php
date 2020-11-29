@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$servername = "localhost:3307";
+$servername = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "letsgo";
+$dbname = "dcscom1_letsgo";
 
 $conn = new mysqli($servername, $user, $pass, $dbname);
 if ($conn->connect_error) {
