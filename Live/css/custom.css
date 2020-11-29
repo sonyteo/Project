@@ -1,0 +1,150 @@
+/*** Global ***/
+
+
+/* Language Select */
+
+.dropdown-menu.langSelect {
+    background-color: #595959;
+    text-align: left;
+}
+
+.dropdown-menu.langSelect ul,
+.dropdown-menu.langSelect li {
+    padding: 5px 0px 0px 8px;
+    margin: 0px 0px -5px 0px;
+}
+
+#colorlib-footer ul,
+#colorlib-footer li {
+    list-style-type: none;
+}
+
+
+/* Email Subscription Input */
+
+.qbstp-header-subscribe #email {
+    height: 50px;
+}
+
+
+/*** About Us Page ***/
+
+.code-icon>img {
+    width: 70px !important;
+}
+
+.code-icon1>img {
+    width: 40px !important;
+}
+
+.code-icon2>img {
+    width: 50px !important;
+}
+
+
+/*** Join Us Page ***/
+
+#pswd_info {
+    margin: auto;
+    margin-bottom: -10px;
+    position: relative;
+    bottom: 15px;
+    width: 210px;
+    padding: 15px;
+    background: #fefefe;
+    font-size: .875em;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px #ccc;
+    border: 1px solid #ddd;
+}
+
+#pswd_info ul {
+    list-style-type: none;
+}
+
+#pswd_info ul {
+    margin: 0;
+    padding: 0;
+}
+
+#pswd_info h5 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+#pswd_info::before {
+    content: "\25B2";
+    position: absolute;
+    top: -12px;
+    left: 45%;
+    font-size: 14px;
+    line-height: 14px;
+    color: #ddd;
+    text-shadow: none;
+    display: block;
+}
+
+.invalid {
+    background: url(../images/invalid.png) no-repeat 0 50%;
+    background-size: 15px;
+    padding-left: 19px;
+    line-height: 25px;
+    color: #ec3f41;
+}
+
+.valid {
+    background: url(../images/valid.png) no-repeat 0 50%;
+    background-size: 15px;
+    padding-left: 19px;
+    line-height: 25px;
+    color: #3a7d34;
+}
+
+#pswd_info {
+    display: none;
+}
+
+
+/*** Profile Page ***/
+
+.name_input {
+    height: 20px !important;
+}
+
+
+/*** Reserve Page ***/
+
+.colorlib-tour.reserve-tour.colorlib-light-grey {
+    padding-top: 3em !important;
+}
+
+
+/*** Room Page ***/
+
+.icon-star-full,
+.icon-star-half,
+.icon-star {
+    color: #FFDD00;
+}
+
+.rating-title {
+    font-weight: bold;
+}
+
+.reviewhead {
+    margin-bottom: 10px;
+}
+
+h2.rating-title,
+p.rate-user {
+    margin-bottom: 0px;
+}
+
+p.submitas {
+    margin-top: 5px;
+}
+
+.reviewbox {
+    display: none;
+}
