@@ -68,7 +68,9 @@ define("_Profile", "个人资料");
 define("_Booking", "预订");
 define("_YourInfo", "您的信息");
 define("_YourBookings", "您的预订");
+define("_ViewYourBooking", "查看您的预订");
 define("_YourReviews", "您的评论");
+define("_CustomizeYourReviews", "自定义您的评论");
 define("_Username", "用户名");
 define("_Email", "邮件");
 define("_EditInfo", "编辑资讯");
@@ -168,5 +170,15 @@ define("_YestoNewAdv", "是的! 新冒险!");
 define("_ExploreOurTA", "探索我们最好的旅行社");
 define("_ExperienceThe", "体验");
 define("_BestTripEver", "有史以来最好的旅行");
+define("_Edit", "编辑");
+define("_Delete", "删除");
+define("_NoData", "没有数据");
+define("_ReviewTitle", "评语标题");
+define("_Rate", "评分");
+define("_RatingDate", "评级日期");
+define("_Action", "行动");
+define("_BookingID", "预订编号");
+define("_BookingDate", "预订日期");
+
 
 ?>

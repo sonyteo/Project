@@ -68,11 +68,6 @@ if (isset($_POST["save"])) {
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 	<style>
-		#booking,
-		#review {
-			display: none;
-		}
-
 		a {
 			cursor: pointer;
 		}
@@ -149,15 +144,15 @@ if (isset($_POST["save"])) {
 									<div class="col-md-12 about">
 										<h2 class="pgtitle"><?= _Profile ?></h2>
 										<ul>
-											<li class="info"><a><?= _YourInfo ?></a></li>
-											<li class="book"><a><?= _YourBookings ?></a></li>
-											<li class="rev"><a><?= _YourReviews ?></a></li>
+											<li class="info"><a href="#information"><?= _YourInfo ?></a></li>
+											<li class="book"><a href="booking.php#booking"><?= _YourBookings ?></a></li>
+											<li class="rev"><a href="review.php#review"><?= _YourReviews ?></a></li>
 										</ul>
 									</div>
 								</div>
 							</div>
-							<div class="col-three-forth animate-box">
-								<div id="information">
+							<div class="col-three-forth animate-box" id="information">
+								<div>
 									<h2><?= _YourInfo ?></h2>
 									<br /><br />
 									<div class="row">
@@ -228,89 +223,6 @@ if (isset($_POST["save"])) {
 												</div>
 											</form>
 										<?php } ?>
-									</div>
-								</div>
-								<div id="booking">
-									<h2><?= _YourBookings ?></h2>
-									<br /><br />
-									<div class="row">
-										<div class="col-md-12 col-sm-12">
-											<table id="booking_table">
-												<tr>
-													<th>Booking ID </th>
-													<th>Hotel Room</th>
-													<th>Room Type</th>
-													<th>Bedding Type</th>
-													<th>No of Room</th>
-													<th>Meal Plan</th>
-													<th>Check-In Date</th>
-													<th>Check-Out Date</th>
-													<th>Remarks</th>
-													<th>Booking Date</th>
-												</tr>
-												<?php
-												$sql = "SELECT booking.*, hotels.hotel_name, rooms.room_type FROM booking
-												INNER JOIN hotels ON hotels.hotel_id = booking.hotel_id
-												INNER JOIN rooms ON rooms.room_id = booking.room_id WHERE user_id=" . $_SESSION["id"] . "";
-												$result = $conn->query($sql);
-												if ($result->num_rows > 0) {
-													while ($row = $result->fetch_assoc()) { ?>
-														<tr>
-															<td><?= $row["booking_id"]; ?></td>
-															<td><?= $row["hotel_name"]; ?></td>
-															<td><?= $row["room_type"]; ?></td>
-															<td><?= $row["bedding"]; ?></td>
-															<td><?= $row["noOfRoom"]; ?></td>
-															<td><?= $row["meal"]; ?></td>
-															<td><?= $row["cin_date"]; ?></td>
-															<td><?= $row["cout_date"]; ?></td>
-															<td><?= $row["remarks"]; ?></td>
-															<td><?= $row["book_date"]; ?></td>
-														</tr>
-													<?php }
-												} else {
-													?>
-													<tr>
-														<td colspan="10">No Data</td>
-													</tr>
-												<?php } ?>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div id="review">
-									<h2><?= _YourReviews ?></h2>
-									<br /><br />
-									<div class="row">
-										<div class="col-md-12 col-sm-12">
-											<table id="review_table">
-												<tr>
-													<th>Hotel Room</th>
-													<th>Rate</th>
-													<th colspan="3">Review</th>
-													<th>Rating Date</th>
-												</tr>
-												<?php
-												$sql = "SELECT rating.*, hotels.hotel_name FROM rating
-												INNER JOIN hotels ON hotels.hotel_id = rating.hotel_id WHERE user_id=" . $_SESSION["id"] . "";
-												$result = $conn->query($sql);
-												if ($result->num_rows > 0) {
-													while ($row = $result->fetch_assoc()) { ?>
-														<tr>
-															<td><?= $row["hotel_id"]; ?></td>
-															<td><?= $row["rate"]; ?></td>
-															<td colspan="3"><?= $row["review"]; ?></td>
-															<td><?= $row["rate_date"]; ?></td>
-														</tr>
-													<?php }
-												} else {
-													?>
-													<tr>
-														<td colspan="7">No Data</td>
-													</tr>
-												<?php } ?>
-											</table>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -387,11 +299,9 @@ if (isset($_POST["save"])) {
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<p>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							Copyright &copy;<script>
 								document.write(new Date().getFullYear());
 							</script> All rights reserved | Let's Go
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
 						</p>
 					</div>
 				</div>
@@ -430,27 +340,6 @@ if (isset($_POST["save"])) {
 	<script>
 		$('#back').click(function() {
 			window.location.href = 'profile.php';
-		});
-		$('.info').click(function() {
-			$("#booking, #review").fadeOut(function() {
-				$("#booking, #review").css("display", "none");
-				$("#information").fadeIn();
-				$(".pgtitle").text("<?= _Profile; ?>");
-			})
-		});
-		$('.book').click(function() {
-			$("#information, #review").fadeOut(function() {
-				$("#information, #review").css("display", "none");
-				$("#booking").fadeIn();
-				$(".pgtitle").text("<?= _Booking; ?>");
-			})
-		});
-		$('.rev').click(function() {
-			$("#information, #booking").fadeOut(function() {
-				$("#information, #booking").css("display", "none");
-				$("#review").fadeIn();
-				$(".pgtitle").text("<?= _Reviews; ?>");
-			})
 		});
 	</script>
 </body>
